@@ -9,6 +9,49 @@ import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+/**
+ * Hero component that displays the main landing section of the portfolio.
+ * 
+ * @component
+ * @description
+ * Renders a full-screen hero section with animated content including:
+ * - Greeting badge with pulse indicator
+ * - Name heading with gradient text effect
+ * - Role indicator with decorative lines
+ * - Tagline/description text
+ * - Primary and secondary call-to-action buttons
+ * - Social media links (GitHub, LinkedIn, Email)
+ * - Profile image or initial avatar with decorative elements
+ * - Floating status badges (role and availability)
+ * - Animated scroll indicator
+ * - Floating background decorative elements
+ * 
+ * The component uses Framer Motion for staggered animations and includes
+ * responsive layouts that adapt from mobile to desktop viewports.
+ * 
+ * @param {ModuleProps} props - Component props
+ * @param {string} [props.id] - Optional section ID for navigation anchors
+ * @param {string} [props.className] - Optional additional CSS classes
+ * 
+ * @returns {JSX.Element} The rendered hero section
+ * 
+ * @example
+ * ```tsx
+ * <Hero id="home" className="custom-hero" />
+ * ```
+ * 
+ * @remarks
+ * - Content is sourced from the `heroContent` configuration object
+ * - Social links are sourced from the `siteConfig.links` object
+ * - Uses CSS custom properties for theming (--color-*, --radius-*, --shadow-*)
+ * - Includes accessibility features like aria-labels and semantic HTML
+ * 
+ * @note Regarding `bg-[--color-white]`: This approach is valid for Tailwind CSS with
+ * CSS custom properties. However, for a pure white color, consider using Tailwind's
+ * built-in `bg-white` class instead, or ensure `--color-white` is defined as `#ffffff`
+ * or `rgb(255, 255, 255)` in your CSS variables. Using CSS variables is beneficial
+ * for theme consistency, but `bg-white` is more explicit and doesn't require variable definition.
+ */
 export function Hero({ id, className }: ModuleProps) {
     const { greeting, name, role, tagline, cta, image } = heroContent;
     const containerVariants = {
@@ -187,7 +230,7 @@ export function Hero({ id, className }: ModuleProps) {
 
                             {/* Floating role badge */}
                             <motion.div
-                                className="absolute -bottom-4 -left-4 rounded-full border border-[--color-border] bg-[--color-background] px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-[--color-foreground] shadow-[var(--shadow-lift)] backdrop-blur-sm"
+                                className="absolute -bottom-4 -left-4 rounded-full border border-white bg-black/30 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-white shadow-[var(--shadow-lift)] backdrop-blur-sm"
                                 animate={{ y: [0, -5, 0] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                             >
@@ -198,13 +241,13 @@ export function Hero({ id, className }: ModuleProps) {
                             </motion.div>
 
                             {/* Status indicator */}
-                            <motion.div
-                                className="absolute -top-2 -right-2 rounded-full border border-[--color-border] bg-[--color-background] px-4 py-2 text-xs font-medium text-[--color-muted] shadow-[var(--shadow-soft)] backdrop-blur-sm"
+                            {/* <motion.div
+                                className="absolute -top-2 -right-2 rounded-full border border-white bg-black/30 px-4 py-2 text-xs font-medium text-white shadow-[var(--shadow-soft)] backdrop-blur-sm"
                                 animate={{ y: [0, 5, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                             >
                                 ✨ Available for work
-                            </motion.div>
+                            </motion.div> */}
                         </div>
                     </motion.div>
                 </motion.div>
