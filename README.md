@@ -90,6 +90,18 @@
 
 ---
 
+## 📸 Showcase
+
+<p align="center">
+  <img src="public/assets/screenshots/home-hero.png" alt="Home - Hero Section" width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);" />
+</p>
+
+<p align="center">
+  <img src="public/assets/screenshots/projects-page.png" alt="Projects Page" width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);" />
+</p>
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
